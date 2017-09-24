@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>es.munisports</groupId>
+    <artifactId>muni-scraper</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <!-- encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- java version -->
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <!-- dependencies version -->
+        <jsoup.version>1.10.2</jsoup.version>
+        <htmlunit.version>2.27</htmlunit.version>
+        <lombok.version>1.16.18</lombok.version>
+    </properties>
+
+    <!-- *************************************************** -->
+    <!-- ** Dependency management -->
+    <!-- *************************************************** -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- START EXTERNAL DEPENDENCIES -->
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>${jsoup.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sourceforge.htmlunit</groupId>
+                <artifactId>htmlunit</artifactId>
+                <version>${htmlunit.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- END EXTERNAL DEPENDENCIES -->
+
+            <!-- START MODULES -->
+            <dependency>
+                <groupId>es.munisports</groupId>
+                <artifactId>muni-scraper-core</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>es.munisports</groupId>
+                <artifactId>muni-scraper-leganes</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <!-- END MODULES -->
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>muni-scraper-core</module>
+        <module>muni-scraper-leganes</module>
+    </modules>
+
+</project>
